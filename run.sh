@@ -1,5 +1,6 @@
 if [ -z "$WERCKER_GIT_PUSH_REMOTE"  ]; then
-    export WERCKER_GIT_PUSH_REMOTE="github_write";
+    git push origin $WERCKER_GIT_BRANCH --tags
+else
+    git push $WERCKER_GIT_PUSH_REMOTE $WERCKER_GIT_BRANCH --tags
 fi
 
-git push $WERCKER_GIT_PUSH_REMOTE $WERCKER_GIT_BRANCH --tags
